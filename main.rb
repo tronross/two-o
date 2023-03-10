@@ -15,3 +15,4 @@ require './problem'
 problemOne = Problem.new
 puts problemOne.num1
 puts problemOne.num2
+puts problemOne.answer
