@@ -7,3 +7,11 @@ class Game
 
 
 end
+
+
+
+playerOne = Player.new
+puts playerOne.lives
+
+playerOne.reduce_lives
+puts playerOne.lives
