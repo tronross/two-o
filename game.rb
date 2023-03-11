@@ -29,11 +29,11 @@ class Game
 
   def turn
     if @p1.turn
-      @p2.turn = true
       @p1.turn = false
+      @p2.turn = true
     else 
-      @p2.turn = false
       @p1.turn = true
+      @p2.turn = false
     end
   end
 
