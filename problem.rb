@@ -1,4 +1,4 @@
-# Problem generates the question using random numbers and calculates the correct answer (and assigns the question and answer to a hash).
+# Problem generates the question using random numbers and calculates the correct answer.
 
 class Problem
   attr_reader :q, :a
