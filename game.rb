@@ -11,17 +11,17 @@ class Game
   def round
     problem = Problem.new
 
-    puts "Player One: #{@p1.lives}/3 Lives vs. Player Two: #{@p2.lives}/3 Lives"
-    puts " <<<<<<<< New Round >>>>>>>>"
-    puts "Player #{@p1.turn ? "One" : "Two"}: #{problem.q}"
+    puts "\nPlayer One: #{@p1.lives}/3 Lives vs. Player Two: #{@p2.lives}/3 Lives"
+    puts "\n<<<<<<<< New Round >>>>>>>>"
+    puts "\nPlayer #{@p1.turn ? "One" : "Two"}: #{problem.q}"
     answer = gets.chomp.to_i
 
     if answer == problem.a
-      puts "Yasss! That's right!"
+      puts "\nYasss! That's right!"
       self.turn
       self.round
     else
-      puts "Noooo! Sharpen your pencil!"
+      puts "\nNoooo! Sharpen your pencil!"
       @p1.turn ? @p1.reduce_lives : @p2.reduce_lives
       self.game_over?
     end
@@ -39,8 +39,9 @@ class Game
 
   def game_over?
     if @p1.lives == 0 || @p2.lives == 0
-      puts "<<<<<<<< Game Over Player #{@p1.turn ? "One" : "Two"}!! >>>>>>>>"
-      puts "Final Score: Player One: #{@p1.lives}/3 Lives vs. Player Two: #{@p2.lives}/3 Lives"
+      puts "\n<<<<<<<< Game Over Player #{@p1.turn ? "One" : "Two"}!! >>>>>>>>"
+      puts "\nFinal Score: Player One: #{@p1.lives}/3 Lives vs. Player Two: #{@p2.lives}/3 Lives"
+      puts "\n"
     else 
       self.turn
       self.round
@@ -48,7 +49,8 @@ class Game
   end
 
   def game_start
-    puts "Welcome Players!"
+    puts `clear`
+    puts "<<<<<<<    Welcome Players!    >>>>>>>"
     self.round
   end
 end
